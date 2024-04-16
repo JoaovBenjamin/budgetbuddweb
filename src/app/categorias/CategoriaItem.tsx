@@ -4,6 +4,7 @@ import DropdownAction from "@/components/DropdownAction";
 import { Icon } from "@/components/Icon";
 import { destroy } from "../actions/categorias/destroy";
 import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 interface CategoriaItemProps {
     categoria: {
@@ -14,6 +15,7 @@ interface CategoriaItemProps {
 }
 
 export function CategoriaItem({ categoria }: CategoriaItemProps) {
+    const router = useRouter()
 
     function handleDelete() {
         toast.promise(
@@ -33,7 +35,7 @@ export function CategoriaItem({ categoria }: CategoriaItemProps) {
                 <span>{categoria.nome}</span>
             </div>
             <DropdownAction
-                onEdit={() => { }}
+                onEdit={() => { router.push("/categorias/" + categoria.id) }}
                 onDelete={handleDelete}
             />
         </div>

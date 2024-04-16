@@ -20,7 +20,9 @@ export default function DropdownAction({onEdit, onDelete}: DropdownActionProps) 
         </Button>
       </DropdownTrigger>
       <DropdownMenu aria-label="Static Actions">
-        <DropdownItem onClick={onEdit} startContent={<Pencil size={18} />} key="edit">editar</DropdownItem>
+        <DropdownItem onClick={onEdit} startContent={<Pencil size={18} />} key="edit">
+          editar
+        </DropdownItem>
         <DropdownItem onClick={onDelete} startContent={<Trash size={18} />} key="delete" className="text-danger" color="danger">
           apagar
         </DropdownItem>
