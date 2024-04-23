@@ -8,7 +8,6 @@ interface ValidationMessages {
 }
 
 export async function create(prevState: any, formData: FormData) {
-    await new Promise(r => setTimeout(r, 4000))
 
     const data = {
       nome: formData.get("nome"),

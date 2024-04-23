@@ -3,7 +3,6 @@
 import { redirect } from "next/navigation"
 
 export async function create(prevState: any, formData: FormData){
-    await new Promise( r => setTimeout(r, 2000))
 
     const date = formData.get("data");
     const partes = String(date).split('-');
