@@ -1,6 +1,10 @@
+import { BarChartCategorias } from "@/components/BarChartCategorias";
 import CardStats from "@/components/Card"
+import { LineChartMovimentacoes } from "@/components/LineChartMovimentacoes";
 import MovimentacaoTable from "@/components/MovimentacaoTable";
 import NavBar from "@/components/NavBar"
+import { Card, CardBody, CardHeader } from "@nextui-org/react";
+import { BarChart } from "lucide-react";
 
 export default function Home() {
 
@@ -75,6 +79,28 @@ export default function Home() {
 
       <section className="grid grid-flow-col-dense  gap-5">
         { totais.map( t => <CardStats {...t} /> ) }
+      </section>
+
+      <section className="flex gap-4">
+        <Card>
+          <CardHeader>
+            <BarChart />
+            <h3>Gastos por categoria</h3>
+          </CardHeader>
+          <CardBody>
+            <BarChartCategorias />
+          </CardBody>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <BarChart />
+            <h3>Movimentações por mês</h3>
+          </CardHeader>
+          <CardBody>
+            <LineChartMovimentacoes />
+          </CardBody>
+        </Card>
       </section>
 
       <section>

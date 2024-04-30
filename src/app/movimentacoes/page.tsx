@@ -4,7 +4,7 @@ import { get } from "../actions/movimentacoes/get";
 import { MovimentacaoData } from "./MovimentacaoData";
 
 export default async function Movimentacoes() {
-  const movimentacoes: Array<Movimentacao> = await get()
+  const movimentacoes = await get()
   const categorias: Array<Categoria> = await getCategorias()
 
   return (

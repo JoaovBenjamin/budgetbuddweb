@@ -10,13 +10,15 @@ import { useEffect, useState } from "react";
 import { get } from "../actions/movimentacoes/get";
 
 interface MovimentacaoDataProps {
-    movimentacoes: Array<Movimentacao>,
+    movimentacoes:{
+        content: Array<Movimentacao>
+    },
     categorias: Array<Categoria>
 }
 
 export function MovimentacaoData({ movimentacoes, categorias }: MovimentacaoDataProps) {
 
-    const [filteredMovimentacoes, setFilteredMovimentacoes] = useState(movimentacoes)
+    const [filteredMovimentacoes, setFilteredMovimentacoes] = useState(movimentacoes.content)
     const [filter, setFilter] = useState({ categoria: '', mes: new Date().getMonth() + 1 })
     const [page, setPage] = useState(1)
     const [totalPages, setTotalPages] = useState(10)
